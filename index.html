@@ -308,7 +308,6 @@
             return Math.round(value / GRID_HEIGHT) * GRID_HEIGHT;
         }
 
-        // Auto-arrange icons in a grid
         function arrangeIconsInGrid() {
             const icons = document.getElementsByClassName("desktopIcon");
             const container = document.querySelector(".workingarea");
@@ -338,7 +337,6 @@
             useTransform: false
         });
 
-        // Snap after dragging with separate X/Y
         ds.subscribe('DS:end', ({ items, isDragging }) => {
             if (!isDragging) return;
             
