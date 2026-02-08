@@ -52,8 +52,8 @@
      border-radius: 6px;
      /* background: var(--glass-effect); */
      background: linear-gradient(180deg, #ffffff00 10%, #ffffffdf 33%, #ffffff00 34%, #ffffff00 100%);
-     background-repeat: repeat;
-     background-attachment: fixed;
+     /*background-repeat: repeat;
+     background-attachment: fixed;*/
      background-size: 160%;
 }
 
