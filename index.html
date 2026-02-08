@@ -12,7 +12,7 @@
     <script src="/js/ds.min.js"></script>
 </head>
 
-<body onmousemove="updateCursorPos(event)">
+<body onmousemove="updateCursorPos(event)" onload="openStart()">
     <span class="BSOD black hidden">
         <span class="BSODError1 hidden">
             A problem has been detected and Windows has been shut down to prevent damage<br>to your computer.
@@ -80,6 +80,10 @@
             <img src="/resources/windows/Icons/imageres_109.ico" draggable="false" height="48px" width="48px">
             <span class="text">Computer</span>
         </span>
+        <span class="desktopIcon" ondblclick="changeWallpaper()">
+            <img src="/resources/windows/Icons/imageres_72.ico" draggable="false" height="48px" width="48px">
+            <span class="text">Wallpaper Swap</span>
+        </span>
     </span>
     <span class="taskbar">
         <span class="startbutton" onclick="toggleStart()">
@@ -115,14 +119,12 @@
             <span class="startlink" onclick="">Documents</span>
             <span class="startlink" onclick="">Pictures</span>
             <span class="startlink" onclick="">Music</span>
-            <span class="startlink" onclick="">Games</span>
             <hr>
-            <span class="startlink more" onclick="">Recent Items</span>
+            <span class="startlink" onclick="">Games</span>
             <span class="startlink" onclick="">Computer</span>
-            <span class="startlink" onclick="">Network</span>
-            <span class="startlink" onclick="">Connect To</span>
             <hr>
             <span class="startlink" onclick="">Control Panel</span>
+            <span class="startlink" onclick="">Devices and Printers</span>
             <span class="startlink" onclick="">Default Programs</span>
             <span class="startlink" onclick="">Help and Support</span>
             <span class="shutdown">
@@ -154,6 +156,10 @@
         var startOpen = false;
         var cursorX = 0;
         var cursorY = 0;
+
+        function changeWallpaper(){
+            document.documentElement.style.setProperty(`--wallpaper`, `url("/resources/wallpapers/Landscapes/img7.jpg")`)
+        }
 
         function openStart() {
             startOpen = true;

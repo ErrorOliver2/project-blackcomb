@@ -317,9 +317,9 @@
     left: 0;
     backdrop-filter: blur(3px) saturate(50%) brightness(75%) contrast(150%);
     width: 406px;
-    height: 534px;
+    height: 480px;
     border-radius: 6px 6px 2px 2px;
-    box-shadow: 2px 2px 4px #00000077;
+    /*box-shadow: 2px 2px 4px #00000077;*/
     z-index: 1000000000;
 }
 
@@ -455,7 +455,6 @@
     transform: translate(-50%, -50%);
     width: 64px;
     height: 64px;
-    background: url("/resources/windows/user-frame.png");
 }
 
 .userimage{
@@ -467,6 +466,17 @@
     left: 8px;
     top: 8px;
     border-radius: 2px;
+}
+
+.userimage::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: url("/resources/windows/user-frame.png");
 }
 
 .workingarea{
@@ -648,7 +658,7 @@
 }
 
 .desktopIcon .text{
-    position: absolute;
+    position: relative;
     display: block;
     margin: 0;
     padding: 0;
@@ -693,6 +703,7 @@
 
 :root{
     cursor: url("/resources/windows/Cursor/aero_arrow.png"), auto;
+    --wallpaper: url("/resources/wallpapers/Windows/img0.jpg")
 }
 
 body, html{
@@ -710,9 +721,10 @@ body, html{
 }
 
 body{
-    background: #000 url("/resources/wallpapers/Windows/img0.jpg") center center no-repeat;
+    background: #000 var(--wallpaper) center center no-repeat;
     background-size: cover;
     color: #282828;
+    transition: background 1s linear;
 }
 
 .hidden{

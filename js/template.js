@@ -4,6 +4,7 @@ template.innerHTML = (
     //'<div class=winbox>' +
 
         '<div class=wb-reflection></div>' +
+        '<div class=wb-glass></div>' +
 
         '<div class=wb-header>' +
             '<div class=wb-control>' +
